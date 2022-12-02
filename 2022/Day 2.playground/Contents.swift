@@ -55,9 +55,7 @@ for pair in pairs {
 
     if points1 == points2 {
         part1Points += 3
-    } else if (pair[1].move == .paper  && pair[0].move == .rock)
-        || (pair[1].move == .rock && pair[0].move == .scissors)
-        || (pair[1].move == .scissors && pair[0].move == .paper) {
+    } else if (pair[0].move == pair[1].move.loseMove) {
         part1Points += 6
     }
 
