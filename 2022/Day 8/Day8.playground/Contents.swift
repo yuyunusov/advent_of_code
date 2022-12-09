@@ -64,7 +64,7 @@ func part1(_ rows: [[Int]]) -> Int {
 }
 
 func part2(_ rows: [[Int]]) -> Int {
-    var distances = [Int]()
+    var maxDistance = 0
     for y in 1..<rows.count - 1 {
         for x in 1..<rows[y].count - 1 {
 
@@ -99,13 +99,11 @@ func part2(_ rows: [[Int]]) -> Int {
                     break
                 }
             }
-            distances.append(counter1 * counter2 * counter3 * counter4)
+            maxDistance = max(maxDistance, counter1 * counter2 * counter3 * counter4)
         }
     }
 
-    return distances.reduce(0) { maxDistance, distance in
-        maxDistance < distance ? distance : maxDistance
-    }
+    return maxDistance
 }
 
 print(part1(rows))
