@@ -53,4 +53,14 @@ abcccccccccccccccccccccccccccccaaaaaccccaacaacaaaaacccaaccccccaaaaaaaaaaaaccccca
 abcccccccccccccccccccccccccccaaaaaaaccccccccaaaaaaaaccccccccccaaaaaaaaaaccccccaaaaaaccccccccaaaaaaaaccccccccccccccccccccccccccccccccccccccccccccccccaaaaaa
 """
     }
+
+    var testInput: String {
+        """
+Sabqponm
+abcryxxl
+accszExk
+acctuvwj
+abdefghi
+"""
+    }
 }
