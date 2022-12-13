@@ -59,12 +59,11 @@
 		8C4AE253294728AA00A76D49 /* Day 17.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4AE246294728AA00A76D49 /* Day 17.swift */; };
 		8C4AE254294728AA00A76D49 /* Day 15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4AE247294728AA00A76D49 /* Day 15.swift */; };
 		8C4AE255294728AA00A76D49 /* Day 21.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4AE248294728AA00A76D49 /* Day 21.swift */; };
-		8C4AE25829474FEC00A76D49 /* UnweightedGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4AE25729474FEC00A76D49 /* UnweightedGraph.swift */; };
-		8C4AE25A294750D300A76D49 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4AE259294750D300A76D49 /* Queue.swift */; };
 		8C4AE25C2947519600A76D49 /* input 12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4AE25B2947519600A76D49 /* input 12.swift */; };
 		8C4AE25E2947546100A76D49 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4AE25D2947546100A76D49 /* String.swift */; };
 		8C4AE260294762A300A76D49 /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4AE25F294762A300A76D49 /* Vertex.swift */; };
 		8C4AE2622947630300A76D49 /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4AE2612947630300A76D49 /* Dijkstra.swift */; };
+		8C4AE26429489BE400A76D49 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4AE26329489BE400A76D49 /* Character.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -133,12 +132,11 @@
 		8C4AE246294728AA00A76D49 /* Day 17.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Day 17.swift"; sourceTree = "<group>"; };
 		8C4AE247294728AA00A76D49 /* Day 15.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Day 15.swift"; sourceTree = "<group>"; };
 		8C4AE248294728AA00A76D49 /* Day 21.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Day 21.swift"; sourceTree = "<group>"; };
-		8C4AE25729474FEC00A76D49 /* UnweightedGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UnweightedGraph.swift; path = ../../../../Documents/UnweightedGraph.swift; sourceTree = "<group>"; };
-		8C4AE259294750D300A76D49 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Queue.swift; path = ../../../../Documents/Queue.swift; sourceTree = "<group>"; };
 		8C4AE25B2947519600A76D49 /* input 12.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "input 12.swift"; sourceTree = "<group>"; };
 		8C4AE25D2947546100A76D49 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = String.swift; path = ../../../../Documents/String.swift; sourceTree = "<group>"; };
 		8C4AE25F294762A300A76D49 /* Vertex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Vertex.swift; path = ../../../../Documents/Vertex.swift; sourceTree = "<group>"; };
 		8C4AE2612947630300A76D49 /* Dijkstra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Dijkstra.swift; path = ../../../../Documents/Dijkstra.swift; sourceTree = "<group>"; };
+		8C4AE26329489BE400A76D49 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +248,7 @@
 			children = (
 				8C4AE21C29471F6900A76D49 /* Int.swift */,
 				8C4AE25D2947546100A76D49 /* String.swift */,
+				8C4AE26329489BE400A76D49 /* Character.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -257,8 +256,6 @@
 		8C4AE25629474FD900A76D49 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				8C4AE25729474FEC00A76D49 /* UnweightedGraph.swift */,
-				8C4AE259294750D300A76D49 /* Queue.swift */,
 				8C4AE25F294762A300A76D49 /* Vertex.swift */,
 				8C4AE2612947630300A76D49 /* Dijkstra.swift */,
 			);
@@ -341,6 +338,7 @@
 				8C4AE1F72947191E00A76D49 /* Day 5.swift in Sources */,
 				8C4AE1F62947191E00A76D49 /* Day 6.swift in Sources */,
 				8C4AE254294728AA00A76D49 /* Day 15.swift in Sources */,
+				8C4AE26429489BE400A76D49 /* Character.swift in Sources */,
 				8C4AE24F294728AA00A76D49 /* Day 18.swift in Sources */,
 				8C4AE237294727D900A76D49 /* input 24.swift in Sources */,
 				8C4AE233294727D900A76D49 /* input 23.swift in Sources */,
@@ -368,9 +366,7 @@
 				8C4AE250294728AA00A76D49 /* Day 14.swift in Sources */,
 				8C4AE213294719B700A76D49 /* input 2.swift in Sources */,
 				8C4AE24C294728AA00A76D49 /* Day 20.swift in Sources */,
-				8C4AE25A294750D300A76D49 /* Queue.swift in Sources */,
 				8C4AE218294719B700A76D49 /* input 7.swift in Sources */,
-				8C4AE25829474FEC00A76D49 /* UnweightedGraph.swift in Sources */,
 				8C4AE25E2947546100A76D49 /* String.swift in Sources */,
 				8C4AE251294728AA00A76D49 /* Day 16.swift in Sources */,
 				8C4AE1F92947191E00A76D49 /* Day 2.swift in Sources */,
