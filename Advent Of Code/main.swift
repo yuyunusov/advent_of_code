@@ -8,4 +8,4 @@
 import Foundation
 
 let aoc2022 = AOC2022()
-aoc2022.solve(12)
+aoc2022.solve(14)

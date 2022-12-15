@@ -1,5 +1,5 @@
 //
-//  Character.swift
+//  Character+Utils.swift
 //  Advent Of Code
 //
 //  Created by Yunus Yunusov on 13.12.2022.
