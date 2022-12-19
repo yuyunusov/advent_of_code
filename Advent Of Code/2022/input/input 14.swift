@@ -8,6 +8,7 @@
 import Foundation
 
 extension AOC2022.Day14 {
+    
     var testInput: String {
         """
 498,4 -> 498,6 -> 496,6

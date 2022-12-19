@@ -66,6 +66,7 @@
 		8C4AE2682948E1B000A76D49 /* HashedHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4AE2672948E1B000A76D49 /* HashedHead.swift */; };
 		8C4AE26A294A7AB000A76D49 /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4AE269294A7AB000A76D49 /* Array+Utils.swift */; };
 		8C4AE26C294B325000A76D49 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4AE26B294B325000A76D49 /* Table.swift */; };
+		8C4AE26F294CCC2E00A76D49 /* Parsing in Frameworks */ = {isa = PBXBuildFile; productRef = 8C4AE26E294CCC2E00A76D49 /* Parsing */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -148,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C4AE26F294CCC2E00A76D49 /* Parsing in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +286,9 @@
 			dependencies = (
 			);
 			name = "Advent Of Code";
+			packageProductDependencies = (
+				8C4AE26E294CCC2E00A76D49 /* Parsing */,
+			);
 			productName = "Advent Of Code";
 			productReference = 8C4AE1DD2947187300A76D49 /* Advent Of Code */;
 			productType = "com.apple.product-type.tool";
@@ -312,6 +317,9 @@
 				Base,
 			);
 			mainGroup = 8C4AE1D42947187300A76D49;
+			packageReferences = (
+				8C4AE26D294CCC2E00A76D49 /* XCRemoteSwiftPackageReference "swift-parsing" */,
+			);
 			productRefGroup = 8C4AE1DE2947187300A76D49 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -544,6 +552,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8C4AE26D294CCC2E00A76D49 /* XCRemoteSwiftPackageReference "swift-parsing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-parsing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8C4AE26E294CCC2E00A76D49 /* Parsing */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C4AE26D294CCC2E00A76D49 /* XCRemoteSwiftPackageReference "swift-parsing" */;
+			productName = Parsing;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8C4AE1D52947187300A76D49 /* Project object */;
 }

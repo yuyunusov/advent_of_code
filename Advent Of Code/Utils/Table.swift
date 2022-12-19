@@ -35,49 +35,24 @@ final class Table<T> where T: CustomStringConvertible & Equatable {
     }
 
     private let defaultValue: T
-    private var data: [[T]] = []
-    private(set) var columns = 0
-    private(set) var rows = 0
+    private var data = [Int: [Int: T]]()
+    private(set) var leftBorder = 0
+    private(set) var rightBorder = 0
+    private(set) var topBorder = 0
+    private(set) var bottomBorder = 0
+
 
     init(defaultValue: T) {
         self.defaultValue = defaultValue
     }
 
-    private func setRows(_ rows: Int) {
-        if self.rows < rows {
-            for y in 0..<data.count {
-                data[y].append(contentsOf: [T](repeating: defaultValue, count: rows - data[y].count))
-            }
-        } else if self.rows > rows {
-            for y in 0..<data.count {
-                data[y].removeSubrange(rows - 1..<data[y].count)
-            }
-        }
-        self.rows = rows
-    }
-
-    private func setColumns(_ columns: Int) {
-        if self.columns < columns {
-            data.append(contentsOf: [[T]](repeating: [T](repeating: defaultValue, count: self.rows), count: columns - self.columns))
-        } else if self.columns > columns {
-            data.removeSubrange(columns - 1..<self.columns)
-        }
-        self.columns = columns
-    }
-
-    func setSize(rows: Int, columns: Int) {
-        setColumns(columns)
-        setRows(rows)
-    }
-
     func setValue(_ x: Int, _ y: Int, _ value: T) {
-        if x >= columns {
-            setColumns(x + 1)
-        }
-        if y >= rows {
-            setRows(y + 1)
-        }
-        data[x][y] = value
+        leftBorder = min(x, leftBorder)
+        rightBorder = max(x, rightBorder)
+        topBorder = min(y, topBorder)
+        bottomBorder = max(y, bottomBorder)
+
+        data[x, default: [:]][y, default: defaultValue] = value
     }
 
     func setValue(_ x1: Int, _ y1: Int, _ x2: Int, _ y2: Int, _ value: T) {
@@ -93,19 +68,17 @@ final class Table<T> where T: CustomStringConvertible & Equatable {
     }
 
     func getValue(_ x: Int, _ y: Int) -> T? {
-        guard x < columns, y < rows else {
-            return nil
-        }
-        return data[x][y]
+        data[x]?[y] ?? defaultValue
     }
 
     func nextPoint(_ x: Int, _ y: Int, direction: Direction) -> (x: Int, y: Int)? {
         let nextX = direction.nextX(x)
         let nextY = direction.nextY(y)
-        guard nextX >= 0, nextX < columns, nextY >= 0, nextY < rows else {
+
+        guard nextX >= leftBorder, nextX <= rightBorder, nextY >= topBorder, nextY <= bottomBorder else {
             return nil
         }
-        return (x: nextX, y: nextY)
+        return (x: nextX, y: nextY )
     }
 
     func nextPoint(_ x: Int, _ y: Int, directions: [Direction]) -> (x: Int, y: Int)? {
@@ -121,9 +94,10 @@ final class Table<T> where T: CustomStringConvertible & Equatable {
 
     func numberOfEqual(_ value: T) -> Int {
         var counter = 0
-        for y in 0..<rows {
-            for x in 0..<columns {
-                if data[x][y] == value {
+
+        for (_, column) in data {
+            for (_, v) in column {
+                if v == value {
                     counter += 1
                 }
             }
@@ -131,14 +105,22 @@ final class Table<T> where T: CustomStringConvertible & Equatable {
         return counter
     }
 
+    func getRow(_ y: Int) -> [T] {
+        var row = [T]()
+        for x in leftBorder...rightBorder {
+            row.append(data[x]?[y] ?? defaultValue)
+        }
+        return row
+    }
+
     func printTable() {
         var result = ""
-        for y in 0..<rows {
-            var rows = ""
-            for x in 430..<min(510, columns) {
-                rows += data[x][y].description
+        for y in topBorder...bottomBorder {
+            var rows = String(y) + " "
+            for x in leftBorder...rightBorder {
+                rows += (data[x]?[y] ?? defaultValue).description
             }
-            result.append(rows+"\n")
+            result.append(rows + "\n")
         }
         print(result)
     }

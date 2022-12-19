@@ -111,7 +111,6 @@ extension AOC2022 {
             }
 
             let table = Table<Point>(defaultValue: .air)
-            table.setSize(rows: rows, columns: columns)
 
             for path in paths {
                 var currentPoint = [Int]()
@@ -134,7 +133,7 @@ extension AOC2022 {
 
         func part2() -> String {
             let table = parse()
-            table.setValue(0, table.rows + 1, 1000, table.rows + 1, .rock)
+            table.setValue(0, table.bottomBorder + 2, 1000, table.bottomBorder + 2, .rock)
             return simulate(table).string
         }
     }
